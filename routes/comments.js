@@ -1,12 +1,12 @@
 const express = require('express')
-const router = express.Router()
+const commentsRouter = express.Router()
 
-const commentsController = require('../controllers/comments')
+const commentsController = require('../controllers/comments.js')
 
-router.get('/comments', commentsController.list)
+commentsRouter.get('/comments', commentsController.listComments)
 
-router.get('/comments/:id', commentsController.show)
+commentsRouter.get('/comments/:id', commentsController.showComments)
 
-router.post('/comments', commentsController.create)
+commentsRouter.post('/comments', commentsController.createComments)
 
-module.exports = router
+module.exports = commentsRouter;

@@ -1,12 +1,12 @@
 const express = require('express')
-const router = express.Router()
+const vehiclesRouter = express.Router()
 
-const vehiclesController = require('../controllers/vehicles')
+const vehiclesController = require('../controllers/vehicles.js')
 
-router.get('/vehicles', vehiclesController.list)
+vehiclesRouter.get('/vehicles', vehiclesController.listVehicles)
 
-router.get('/vehicles/:id', vehiclesController.show)
+vehiclesRouter.get('/vehicles/:id', vehiclesController.showVehicles)
 
-router.post('/vehicles', vehiclesController.create)
+vehiclesRouter.post('/vehicles', vehiclesController.createVehicles)
 
-module.exports = router
+module.exports = vehiclesRouter;

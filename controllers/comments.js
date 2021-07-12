@@ -1,7 +1,26 @@
 const comments = require("../data/comments")
 
-const list =
-const show =
-const create =
+const listComments = (req, res) => {
+  res.json(comments);
+}
 
-module.exports = { list, show, create }
+const showComments = (req, res) => {
+  for (let i = 0; i < comments.length; i++) {
+    if (comments[i]._id == req.params.id) {
+        res.json(comments[i]);
+    }
+}
+  }
+
+
+
+const createComments = (req, res) => {
+  req.body._Id = comments.length;
+  req.body.postID = 1;
+  comments.push(req.body);
+  res.json(vehicles)
+}
+
+
+
+module.exports = { listComments, showComments, createComments }
